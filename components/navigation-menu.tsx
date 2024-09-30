@@ -17,26 +17,27 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Web Development",
+    title: "Ecommerce website",
     href: "/projects?category=web",
-    description: "Full-stack web applications built with modern technologies.",
+    description: "A fully-featured e-commerce platform with payment integration, user authentication, and product management built using modern web technologies.",
   },
   {
-    title: "Mobile Apps",
-    href: "/projects?category=mobile",
-    description: "Cross-platform mobile applications for iOS and Android.",
+    title: "Video chat app",
+    href: "/projects?category=web",
+    description: "A cross-platform video chat application designed for seamless communication across iOS and Android devices, featuring real-time video and messaging.",
   },
   {
-    title: "DevOps",
-    href: "/projects?category=devops",
-    description: "CI/CD pipelines, containerization, and cloud infrastructure.",
+    title: "Browser based IDE",
+    href: "/projects?category=web",
+    description: "A web-based integrated development environment (IDE) supporting coding, terminal usage, file management, and collaboration tools, optimized for web development.",
   },
   {
-    title: "Machine Learning",
-    href: "/projects?category=ml",
-    description: "AI and machine learning projects and experiments.",
+    title: "PDF Viewer",
+    href: "/projects?category=web",
+    description: "A PDF viewer with editing capabilities, built for displaying and interacting with PDF files directly in the browser.",
   },
-]
+];
+
 
 export function NavigationMenuDemo() {
   const pathname = usePathname()

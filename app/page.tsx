@@ -11,7 +11,7 @@ import './globals.css'
 import image from '../public/image/image.png'
 import Link from 'next/link'
 import { useState } from 'react'
-import RotatingAvatar from '@/components/ThreeAvatar'
+
 
 export default function Home() {
 
@@ -51,18 +51,32 @@ export default function Home() {
   const handleDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (isDownloading) return
-
+  
     setIsDownloading(true)
-
+  
     try {
-      const response = await fetch('/documents/resume.pdf')
+      const response = await fetch('/document/resume.pdf')
+  
+      // Check if the response is okay and the file is a PDF
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+  
+      const contentType = response.headers.get('Content-Type')
+      if (contentType !== 'application/pdf') {
+        throw new Error('File is not a PDF')
+      }
+  
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)
+  
       const link = document.createElement('a')
       link.href = url
       link.setAttribute('download', 'resume.pdf')
       document.body.appendChild(link)
       link.click()
+  
+      // Cleanup
       link.parentNode?.removeChild(link)
       window.URL.revokeObjectURL(url)
     } catch (error) {
@@ -71,6 +85,7 @@ export default function Home() {
       setIsDownloading(false)
     }
   }
+  
   return (
     <motion.div
       className="flex flex-col items-center"

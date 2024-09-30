@@ -19,14 +19,6 @@ const projects = [
     category: 'web',
   },
   {
-    id: 2,
-    title: 'AI-Powered Task Manager',
-    description: 'A task management app with AI-driven prioritization and scheduling.',
-    image: '/placeholder.svg?height=200&width=300',
-    tags: ['React', 'Python', 'TensorFlow', 'FastAPI', 'PostgreSQL'],
-    category: 'ml',
-  },
-  {
     id: 3,
     title: 'Real-time Analytics Dashboard',
     description: 'A real-time analytics dashboard for monitoring system performance.',
@@ -34,31 +26,33 @@ const projects = [
     tags: ['Vue.js', 'WebSockets', 'Node.js', 'InfluxDB', 'Grafana'],
     category: 'web',
   },
+
   {
-    id: 4,
-    title: 'Cross-Platform Mobile App',
-    description: 'A cross-platform mobile app for tracking fitness and nutrition.',
+    id: 6,
+    title: 'Video chat app',
+    description: 'A cross-platform video chat application designed for seamless communication across iOS and Android devices, featuring real-time video and messaging.',
     image: '/placeholder.svg?height=200&width=300',
-    tags: ['React Native', 'Redux', 'Firebase', 'HealthKit', 'Google Fit'],
+    tags: ['React Native', 'WebRTC', 'Firebase', 'Node.js'],
     category: 'mobile',
   },
   {
-    id: 5,
-    title: 'CI/CD Pipeline Automation',
-    description: 'Automated CI/CD pipeline for streamlining software delivery.',
+    id: 7,
+    title: 'Browser-based IDE',
+    description: 'A web-based integrated development environment (IDE) supporting coding, terminal usage, file management, and collaboration tools, optimized for web development.',
     image: '/placeholder.svg?height=200&width=300',
-    tags: ['Jenkins', 'Docker', 'Ansible', 'Terraform', 'AWS'],
+    tags: ['React', 'Node.js', 'Monaco Editor', 'Docker'],
     category: 'devops',
   },
   {
-    id: 6,
-    title: '3D Visualization Tool',
-    description: 'A web-based 3D visualization tool for architectural designs.',
+    id: 8,
+    title: 'PDF Viewer',
+    description: 'A PDF viewer with editing capabilities, built for displaying and interacting with PDF files directly in the browser.',
     image: '/placeholder.svg?height=200&width=300',
-    tags: ['Three.js', 'WebGL', 'React', 'Node.js', 'MongoDB'],
-    category: 'web',
+    tags: ['React', 'PDF.js', 'Node.js'],
+    category: 'tools',
   },
-]
+];
+
 
 export default function ProjectList() {
   const searchParams = useSearchParams()
@@ -81,7 +75,7 @@ export default function ProjectList() {
     <>
       <div className="mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap gap-2">
-          {['all', 'web', 'mobile', 'devops', 'ml'].map((cat) => (
+          {['all'].map((cat) => (
             <Button
               key={cat}
               variant={category === cat ? "default" : "outline"}
