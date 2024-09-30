@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="container mx-auto px-4 py-6 flex justify-between items-center">
                 <p>© 2024 Rahul Bhardwaj. All rights reserved.</p>
                 <div className="flex space-x-4">
-                  <Link href="https://www.linkedin.com" target="_blank" className="hover:underline">
+                  <Link href="https://www.linkedin.com/in/rahul-bhardwaj-314058225/" target="_blank" className="hover:underline">
                     {/* <Linkedin size={24} className="hover:text-blue-500" /> */}
                     LinkedIn
                   </Link>
