@@ -15,6 +15,7 @@ const blogPosts = [
     description: 'Learn how to build modern web applications with Next.js 13 and its new App Router.',
     date: '2023-06-15',
     tags: ['Next.js', 'React', 'Web Development'],
+    url: 'https://blog.coffeeinc.in/how-to-create-a-next-js-13-project-without-using-create-next-app-c73ba6849916'
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const blogPosts = [
     description: 'Dive deep into TypeScript and learn advanced techniques to improve your code quality.',
     date: '2023-05-22',
     tags: ['TypeScript', 'JavaScript', 'Programming'],
+    url: 'https://dev.to/cliff123tech/mastering-typescript-a-comprehensive-guide-part1-191k'
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const blogPosts = [
     description: 'Explore the world of microservices and learn how to build scalable applications with Node.js.',
     date: '2023-04-10',
     tags: ['Node.js', 'Microservices', 'Backend'],
+    url: 'https://medium.com/@amandubey_6607/building-scalable-microservices-with-node-js-frameworks-and-features-66abe283b255'
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const blogPosts = [
     description: 'Learn techniques and best practices to optimize the performance of your React applications.',
     date: '2023-03-05',
     tags: ['React', 'Performance', 'Optimization'],
+    url: 'https://www.freecodecamp.org/news/react-performance-optimization-techniques/'
   },
 ]
 
@@ -101,7 +105,7 @@ export default function Blog() {
               </CardContent>
               <CardFooter>
                 <Button variant="outline" className="w-full" asChild>
-                  <Link href={`/blog/${post.id}`}>Read More</Link>
+                  <Link href={post.url} target="_blank">Read More</Link>
                 </Button>
               </CardFooter>
             </Card>

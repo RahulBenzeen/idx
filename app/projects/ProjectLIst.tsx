@@ -14,44 +14,44 @@ const projects = [
     id: 1,
     title: 'E-commerce Platform',
     description: 'A scalable e-commerce platform built with microservices architecture.',
-    image: '/placeholder.svg?height=200&width=300',
-    tags: ['Next.js', 'Node.js', 'Docker', 'Kubernetes', 'MongoDB'],
+    image: 'https://via.placeholder.com/300x200.png?text=E-commerce+Platform', // Updated image URL
+    tags: ['React.js', 'Node.js', 'Docker', 'Express', 'SMTP', 'MongoDB'],
     category: 'web',
   },
   {
     id: 3,
     title: 'Real-time Analytics Dashboard',
     description: 'A real-time analytics dashboard for monitoring system performance.',
-    image: '/placeholder.svg?height=200&width=300',
-    tags: ['Vue.js', 'WebSockets', 'Node.js', 'InfluxDB', 'Grafana'],
+    image: 'https://via.placeholder.com/300x200.png?text=Real-time+Analytics+Dashboard', // Updated image URL
+    tags: ['React', 'WebSockets', 'Node.js', 'Express', 'MongoDB', 'Chart'],
     category: 'web',
   },
-
   {
     id: 6,
     title: 'Video chat app',
     description: 'A cross-platform video chat application designed for seamless communication across iOS and Android devices, featuring real-time video and messaging.',
-    image: '/placeholder.svg?height=200&width=300',
-    tags: ['React Native', 'WebRTC', 'Firebase', 'Node.js'],
-    category: 'mobile',
+    image: 'https://via.placeholder.com/300x200.png?text=Video+Chat+App', // Updated image URL
+    tags: ['React', 'WebRTC', 'Firebase', 'Node.js'],
+    category: 'web',
   },
   {
     id: 7,
     title: 'Browser-based IDE',
     description: 'A web-based integrated development environment (IDE) supporting coding, terminal usage, file management, and collaboration tools, optimized for web development.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: 'https://via.placeholder.com/300x200.png?text=Browser-based+IDE', // Updated image URL
     tags: ['React', 'Node.js', 'Monaco Editor', 'Docker'],
-    category: 'devops',
+    category: 'web',
   },
   {
     id: 8,
     title: 'PDF Viewer',
     description: 'A PDF viewer with editing capabilities, built for displaying and interacting with PDF files directly in the browser.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: 'https://via.placeholder.com/300x200.png?text=PDF+Viewer', // Updated image URL
     tags: ['React', 'PDF.js', 'Node.js'],
-    category: 'tools',
+    category: 'web',
   },
 ];
+
 
 
 export default function ProjectList() {
@@ -127,9 +127,9 @@ export default function ProjectList() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter>
+                {/* <CardFooter>
                   <Button variant="outline" className="w-full">View Details</Button>
-                </CardFooter>
+                </CardFooter> */}
               </Card>
             </motion.div>
           ))}

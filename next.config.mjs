@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    images: {
+        domains: ['via.placeholder.com']
+      },
     env:{
         MONGODB_URI: process.env.MONGODB_URI,
         SMTP_HOST: process.env.SMTP_HOST,
