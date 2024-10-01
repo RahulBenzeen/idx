@@ -79,6 +79,7 @@ export default function Blog() {
             }
           }
         }}
+        
         initial="hidden"
         animate="show"
       >

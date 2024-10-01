@@ -171,6 +171,7 @@ export default function Home() {
           </TabsContent>
           <TabsContent value="experience">
             <Card>
+              
               <CardHeader>
                 <CardTitle>Work Experience</CardTitle>
               </CardHeader>
