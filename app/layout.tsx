@@ -7,6 +7,7 @@ import { Linkedin, Github, Twitter, Youtube, Menu } from 'lucide-react'
 import InteractiveBackground from '@/components/ThreeBackground'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import Script from 'next/script'
 import './globals.css';
 import {metadata, viewport} from './metadata'
 
@@ -79,6 +80,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </footer>
           </div>
         </ThemeProvider>
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Rahul Bhardwaj",
+              "url": "https://rahulbhardwaj.tech",
+              "jobTitle": "Full Stack Developer",
+              "sameAs": [
+                "https://www.linkedin.com/in/rahul-bhardwaj-314058225/",
+                "https://www.github.com/RahulBenzeen",
+                // "https://www.twitter.com/rahulbhardwaj"
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   )

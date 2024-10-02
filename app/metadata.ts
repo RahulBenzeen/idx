@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Rahul Bhardwaj | Developer',
-    template: '%s | Rahul Bhardwaj'
+    default: 'Rahul Bhardwaj | Developer Portfolio',
+    template: '%s | Rahul Bhardwaj Portfolio'
   },
-  description: 'Full Stack Developer with over 3 years of experience in web development, specializing in building scalable, high-performance applications using cutting-edge technologies.',
-  keywords: ['Full Stack Developer', 'React', 'Node.js', 'Next.js', 'TypeScript', 'Web Development', 'JavaScript', 'Frontend', 'Backend'],
-  authors: [{ name: 'Rahul Bhardwaj', url: 'https://www.rahulbhardwaj.tech' }],
+  description: 'Explore the portfolio of Rahul Bhardwaj, a Full Stack Developer with over 3 years of experience in React, Node.js, and Next.js. View projects, skills, and contact information.',
+  keywords: ['Rahul Bhardwaj', 'Portfolio', 'Full Stack Developer', 'React', 'Node.js', 'Next.js', 'TypeScript', 'Web Development', 'JavaScript', 'Frontend', 'Backend'],
+  authors: [{ name: 'Rahul Bhardwaj', url: 'https://rahulbhardwaj.tech' }],
   creator: 'Rahul Bhardwaj',
   publisher: 'Rahul Bhardwaj',
   formatDetection: {
@@ -15,32 +15,32 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.rahulbhardwaj.tech'),
+  metadataBase: new URL('https://rahulbhardwaj.tech'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Rahul Bhardwaj | Developer',
-    description: 'Full Stack Developer specializing in React, Node.js, and Next.js',
-    url: 'https://www.rahulbhardwaj.tech',
+    title: 'Rahul Bhardwaj | Full Stack Developer Portfolio',
+    description: 'Explore the portfolio of Rahul Bhardwaj, a Full Stack Developer specializing in React, Node.js, and Next.js',
+    url: 'https://rahulbhardwaj.tech',
     siteName: 'Rahul Bhardwaj Portfolio',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://www.rahulbhardwaj.tech',
+        url: 'https://rahulbhardwaj.tech/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Rahul Bhardwaj - Full Stack Developer',
+        alt: 'Rahul Bhardwaj - Full Stack Developer Portfolio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rahul Bhardwaj | Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Node.js, and Next.js',
+    title: 'Rahul Bhardwaj | Full Stack Developer Portfolio',
+    description: 'Explore the portfolio of Rahul Bhardwaj, a Full Stack Developer specializing in React, Node.js, and Next.js',
     creator: '@rahulbhardwaj',
-    images: ['https://www.rahulbhardwaj.tech'],
+    images: ['https://rahulbhardwaj.tech/twitter-image.jpg'],
   },
   robots: {
     index: true,
@@ -60,9 +60,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
-    // bing: 'bing-verification-code',
+    google: 'your-google-site-verification-code',
+    // bing: 'your-bing-site-verification-code',
   },
 }
 
