@@ -7,14 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Terminal, Code, Server, Book, Download } from "lucide-react"
-import './globals.css'
-import image from '../public/image/image.png'
 import Link from 'next/link'
 import { useState } from 'react'
+import image from '../public/image/image.png'
+import './globals.css'
 
-
-export default function Home() {
-
+export default function Component() {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const skills = [
@@ -57,7 +55,6 @@ export default function Home() {
     try {
       const response = await fetch('/document/resume.pdf')
   
-      // Check if the response is okay and the file is a PDF
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
@@ -76,7 +73,6 @@ export default function Home() {
       document.body.appendChild(link)
       link.click()
   
-      // Cleanup
       link.parentNode?.removeChild(link)
       window.URL.revokeObjectURL(url)
     } catch (error) {
@@ -88,39 +84,33 @@ export default function Home() {
   
   return (
     <motion.div
-      className="flex flex-col items-center"
+      className="flex flex-col items-center px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="text-center mb-12" variants={itemVariants}>
-        <h1 className="text-4xl font-bold mb-4">Rahul Bhardwaj</h1>
-        <h2 className="text-2xl mb-4">Full Stack Developer</h2>
-        <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto mb-6" > 
-        <Image
-          style={{backgroundColor:'gray'}}
+      <motion.div className="text-center mb-8 sm:mb-12" variants={itemVariants}>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-4">Rahul Bhardwaj</h1>
+        <h2 className="text-xl sm:text-2xl mb-4">Full Stack Developer</h2>
+        <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6" > 
+          <Image
             src={image}
-            alt="Rahul "
+            alt="Rahul"
             layout="fill"
             objectFit="cover"
           />
+        </div>
 
-       </div>
-
-        {/* <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 ">
-          <RotatingAvatar />
-        </div> */}
-
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">
           With over 3 years of experience in web development, I specialize in building scalable,
           high-performance applications using cutting-edge technologies.
         </p>
-        <div className="flex justify-center space-x-4">
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Button
             size="lg"
             onClick={handleDownload}
             disabled={isDownloading}
-            className="flex items-center gap-2"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             {isDownloading ? (
               <>
@@ -135,7 +125,7 @@ export default function Home() {
             )}
           </Button>
 
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto">
             <Link href='/projects'> View Projects</Link>
           </Button>
         </div>
@@ -146,7 +136,7 @@ export default function Home() {
         variants={containerVariants}
       >
         <Tabs defaultValue="skills" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
@@ -158,11 +148,11 @@ export default function Home() {
                 <CardTitle>Technical Skills</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {skills.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center">
+                    <div key={skill.name} className="flex flex-col items-center text-center">
                       <Badge variant="outline" className="mb-2">{skill.level}</Badge>
-                      {skill.name}
+                      <span className="text-sm sm:text-base">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -171,7 +161,6 @@ export default function Home() {
           </TabsContent>
           <TabsContent value="experience">
             <Card>
-              
               <CardHeader>
                 <CardTitle>Work Experience</CardTitle>
               </CardHeader>
@@ -180,13 +169,8 @@ export default function Home() {
                   <li>
                     <h3 className="font-semibold">Frontend Developer At Benzeenautoparts.com</h3>
                     <p className="text-sm text-muted-foreground">07/04/2022 - Present</p>
-                    <p>Development of products for the company, like insight dashboard, cutomer management tool</p>
+                    <p className="text-sm sm:text-base">Development of products for the company, like insight dashboard, customer management tool</p>
                   </li>
-                  {/* <li>
-                    <h3 className="font-semibold"> at WebSolutions Inc.</h3>
-                    <p className="text-sm text-muted-foreground">2015 - 2018</p>
-                    <p>Developed and maintained multiple client projects...</p>
-                  </li> */}
                 </ul>
               </CardContent>
             </Card>
@@ -200,12 +184,8 @@ export default function Home() {
                 <ul className="space-y-4">
                   <li>
                     <h3 className="font-semibold">Bachelor in Computer Science</h3>
-                    <p className="text-sm text-muted-foreground">Gateway Institute of Engineering and Techonology (DCRUST), 2022</p>
+                    <p className="text-sm text-muted-foreground">Gateway Institute of Engineering and Technology (DCRUST), 2022</p>
                   </li>
-                  {/* <li>
-                    <h3 className="font-semibold">BS in Software Engineering</h3>
-                    <p className="text-sm text-muted-foreground">MIT, 2013</p>
-                  </li> */}
                 </ul>
               </CardContent>
             </Card>
@@ -216,24 +196,23 @@ export default function Home() {
                 <CardTitle>Achievements</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-sm sm:text-base">
                   <li className="flex items-center">
-                    <Book className="mr-2" /> Completed online course in Full-Stack Development
+                    <Book className="mr-2 flex-shrink-0" /> Completed online course in Full-Stack Development
                   </li>
                   <li className="flex items-center">
-                    <Code className="mr-2" /> Built and deployed a Ecommerce website using React
+                    <Code className="mr-2 flex-shrink-0" /> Built and deployed an Ecommerce website using React
                   </li>
                   <li className="flex items-center">
-                    <Terminal className="mr-2" /> Self-taught in backend development with Node.js and Express
+                    <Terminal className="mr-2 flex-shrink-0" /> Self-taught in backend development with Node.js and Express
                   </li>
                   <li className="flex items-center">
-                    <Server className="mr-2" /> Set up a cloud-hosted database for a personal project
+                    <Server className="mr-2 flex-shrink-0" /> Set up a cloud-hosted database for a personal project
                   </li>
                 </ul>
               </CardContent>
             </Card>
           </TabsContent>
-
         </Tabs>
       </motion.div>
     </motion.div>
